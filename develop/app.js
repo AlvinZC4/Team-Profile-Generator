@@ -10,6 +10,57 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamMembers = []
+
+const initApp = () =>
+{
+
+    console.log("Assemble your team. Lets start with the manager")
+     inquirer
+        .prompt([
+            {
+            type: "input",
+            name: "name",
+            message: "Enter the name of the manager."
+            },
+            {
+            type: "input",
+            name: "id",
+            message: "Enter employee ID number"
+            },
+            {
+            type: "input",
+            name: "email",
+            message: "Enter the manager's e-mail address"
+            },
+            {
+            type: "input",
+            name: "officeNumber",
+            message: "Enter the office number of the manager"
+            },
+            {
+            type: "list",
+            name: "next",
+            message: "Select the role of the next team member",
+            choices: [
+                "Engineer",
+                "Intern"
+                ]
+            }
+    ]).then(function(data) {
+        const newManager = new Manager(data.name, data.id, data.email, data.officeNumber)
+
+        teamMembers.push(newManager)
+        
+        if (data.next === "Engineer") {
+            createEngineer()
+        }
+        else {
+            createIntern()
+        }
+    })
+}
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -33,3 +84,6 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+
+initApp()
