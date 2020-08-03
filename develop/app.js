@@ -21,22 +21,58 @@ const initApp = () =>
             {
             type: "input",
             name: "name",
-            message: "Enter the name of the manager."
+            message: "Enter the name of the manager.",
+            validate: function(value) {
+                let pass = value.match(
+                    /^[a-zA-Z_]+([ ]?[a-zA-Z])*$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid name"
+            }
             },
             {
             type: "input",
             name: "id",
-            message: "Enter the employee ID number of the manager"
+            message: "Enter the employee ID number of the manager",
+            validate: function(value) {
+                let pass = value.match(
+                    /^\d+$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid number"
+            }
             },
             {
             type: "input",
             name: "email",
-            message: "Enter the manager's e-mail address"
+            message: "Enter the manager's e-mail address",
+            validate: function(value) {
+                let pass = value.match(
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid e-mail address"
+            }
             },
             {
             type: "input",
             name: "officeNumber",
-            message: "Enter the office number of the manager"
+            message: "Enter the office number of the manager",
+            validate: function(value) {
+                let pass = value.match(
+                    /^\d+$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid number"
+            }
             },
             {
             type: "list",
@@ -66,17 +102,44 @@ const createEngineer = () => {
             {
             type: "input",
             name: "name",
-            message: "Enter the name of the engineer."
+            message: "Enter the name of the engineer.",
+            validate: function(value) {
+                let pass = value.match(
+                    /^[a-zA-Z_]+([ ]?[a-zA-Z])*$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid name"
+            }
             },
             {
             type: "input",
             name: "id",
-            message: "Enter the employee ID number of the engineer"
+            message: "Enter the employee ID number of the engineer",
+            validate: function(value) {
+                let pass = value.match(
+                    /^\d+$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid number"
+            }
             },
             {
             type: "input",
             name: "email",
-            message: "Enter the engineer's e-mail address"
+            message: "Enter the engineer's e-mail address",
+            validate: function(value) {
+                let pass = value.match(
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid e-mail address"
+            }
             },
             {
             type: "input",
@@ -115,17 +178,44 @@ const createIntern = () => {
             {
             type: "input",
             name: "name",
-            message: "Enter the name of the intern."
+            message: "Enter the name of the intern.",
+            validate: function(value) {
+                let pass = value.match(
+                    /^[a-zA-Z_]+([ ]?[a-zA-Z])*$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid name"
+            }
             },
             {
             type: "input",
             name: "id",
-            message: "Enter the employee ID number of the intern"
+            message: "Enter the employee ID number of the intern",
+            validate: function(value) {
+                let pass = value.match(
+                    /^\d+$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid number"
+            }
             },
             {
             type: "input",
             name: "email",
-            message: "Enter the intern's e-mail address"
+            message: "Enter the intern's e-mail address",
+            validate: function(value) {
+                let pass = value.match(
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+                )
+                if (pass) {
+                    return true
+                }
+                return "Please enter a valid e-mail address"
+            }
             },
             {
             type: "input",
